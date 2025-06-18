@@ -130,20 +130,6 @@ ggplot() +
   guides(fill = guide_legend(override.aes = list(colour = "black")))
 
 
-st_crs(merged_2016)
 
-library(sf)
-
-
-ggplot() +
-  geom_sf(data = merged_2016, aes(fill = Distance_cafes), colour = "white", linewidth = .15) +
-  theme_void() +
-  labs(title = sprintf("Wijken in Rotterdam & Krimpenerwaard (%s)", wijk_year),
-       fill  = "Wijk") +
-  guides(fill = guide_legend(override.aes = list(colour = "black")))
-
-
-
-#poging 12345678
 
 
