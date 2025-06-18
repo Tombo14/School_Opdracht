@@ -98,7 +98,12 @@ Please use a separate 'R block' of code for each type of cleaning. So, e.g. one 
 
 Variable 1
 
-```{r gen_var1}
+```{merged_data <- merged_data %>%}
+  mutate(Distance_cafes = if_else(
+    Horeca.Cafés.en.dergelijke.Afstand.tot.café.e.d...km.> 1,
+    "Cafes further than 1 km",
+    "Cafes closer than 1 km"
+  ))
 
 ```
 
