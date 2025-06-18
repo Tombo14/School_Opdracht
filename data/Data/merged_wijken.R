@@ -15,3 +15,4 @@ merged_2016 <- merged_data %>%
 merged_wijken <- wijken_sf %>%
   rename("Regioaanduiding.Codering..code." = "statcode")
 
+merged_2016 <- merged_2016 %>% full_join(merged_wijken, by = "Regioaanduiding.Codering..code.")
