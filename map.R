@@ -83,7 +83,7 @@ ggplot() +
        fill  = "Wijk") +
   guides(fill = guide_legend(override.aes = list(colour = "black")))
 
-##### Poging 3 ------
+##### Poging 3 ------goeieee
 library(cbsodataR)
 library(ggplot2)
 library(dplyr)
