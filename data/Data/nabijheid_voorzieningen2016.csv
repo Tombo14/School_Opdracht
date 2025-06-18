@@ -1,0 +1,197 @@
+"","Wijken.en.buurten","Horeca.Cafés.en.dergelijke.Afstand.tot.café.e.d...km."
+"1","Krimpenerwaard",1.2
+"2","Wijk 00 Lekkerkerk",0.7
+"3","Tiendhoek",0.8
+"4","Schuwacht",1.5
+"5","Opperduit",2.3
+"6","Tiendweg-West",1.1
+"7","Lekkerkerk-Oost",0.6
+"8","Prinsessenbuurt",0.3
+"9","Koninginnenbuurt",0.4
+"10","Wibautsraat en Lorentzweg",0.3
+"11","Molenwerf en omstreken",0.6
+"12","Voorstraat en Centrum",0.3
+"13","Industrieterrein",0.6
+"14","Verspr. huizen Lekkerkerk",2.3
+"15","Wijk 01 Krimpen aan de Lek",0.7
+"16","Hoofdstraat",0.5
+"17","Binnen Krimpen",0.6
+"18","Beroepenbuurt",0.2
+"19","Krimpen-Oost",1.2
+"20","Zaag",2
+"21","Tiendweg Noord",1.1
+"22","Krimpen Centrum",0.3
+"23","Industrieterrein Krimpen",0.2
+"24","Lekdijk",1.2
+"25","Verspr. huizen Krimpen aan de Lek",1.9
+"26","Wijk 02 Ouderkerk aan den IJssel",1.5
+"27","Ouderkerk aan den IJssel",0.6
+"28","Verspr. huizen Ouderkerk Noord",4.1
+"29","Verspr. huizen Ouderkerk Oost",2.7
+"30","Wijk 03 Gouderak",3.6
+"31","Gouderak",3.6
+"32","Wijk 04 Bergambacht",0.9
+"33","Bergambacht-Dorp",0.8
+"34","Kadijk en Kadijkselaan",1.7
+"35","Uitbreiding Dorp",0.5
+"36","Benedenberg en Zuidbroek",3.3
+"37","Tussenlanen",1.7
+"38","Bovenberg westelijk van de Fransekade",2.3
+"39","Wijk 05 Bergstoep",1.4
+"40","Bergstoep",1.2
+"41","Lekdijk-West en Provinciale weg (ged.)",3.5
+"42","Lekdijk-Oost en Provinciale weg (ged.)",1.1
+"43","Bovenstad",1.1
+"44","Provinciale weg (ged.) De Hem en Hogedij",1.9
+"45","Wijk 06 Ammerstol",0.4
+"46","Ammerstol",0.4
+"47","Wijk 07 Berkenwoude",6
+"48","Berkenwoude",5.7
+"49","Achterbroek",7.3
+"50","Wijk 08 Haastrecht",0.8
+"51","Haastrecht-Dorpskern",0.2
+"52","Boven-Haastrecht",2.3
+"53","Beneden-Haastrecht",1.8
+"54","Rozendaal",2.6
+"55","Stolwijkersluis (ged.)",1.7
+"56","Hofkamp",0.7
+"57","Agterpoort",0.4
+"58","Stein",0.4
+"59","Verspr. huizen Haastrecht Noord",0.9
+"60","Verspr. huizen Haastrecht Zuid",NA
+"61","Bergvliet",1
+"62","Wijk 10 Stolwijk",1.1
+"63","Stolwijk",0.6
+"64","Bovenkerk",1
+"65","Benedenkerk",1.1
+"66","Benedenheul",3.2
+"67","Goudseweg",1.5
+"68","Het Beijersche",4.1
+"69","Koolwijk",2.3
+"70","Schoonouwen",2.5
+"71","Bilwijk",1.8
+"72","Wijk 11 Vlist",1.1
+"73","Vlist",1.2
+"74","Bonrepas",0.8
+"75","Wijk 12 Schoonhoven",0.8
+"76","Schoonhoven-Oude Stad",0.2
+"77","Schoonhoven-Noord",0.6
+"78","Schoonhoven-West",1.1
+"79","Zevender",1
+"80","Willige-Langerak",1
+"81","Vlist, Bovenberg en Lekdijk",1.1
+"82","Rotterdam",0.7
+"83","Rotterdam Centrum",0.2
+"84","Stadsdriehoek",0.2
+"85","Oude Westen",0.2
+"86","Cool",0.1
+"87","Cs Kwartier",0.2
+"88","Nieuwe Werk",0.3
+"89","Dijkzigt",0.4
+"90","Delfshaven",0.2
+"91","Delfshaven",0.3
+"92","Bospolder",0.1
+"93","Tussendijken",0.2
+"94","Spangen",0.2
+"95","Nieuwe Westen",0.2
+"96","Middelland",0.1
+"97","Oud Mathenesse",0.2
+"98","Witte Dorp",0.3
+"99","Schiemond",0.4
+"100","Overschie",0.6
+"101","Kleinpolder",0.3
+"102","Noord Kethel",2.9
+"103","Schieveen",3.5
+"104","Zestienhoven",1.4
+"105","Overschie",0.5
+"106","Landzicht",0.4
+"107","Noord",0.2
+"108","Agniesebuurt",0.2
+"109","Provenierswijk",0.2
+"110","Bergpolder",0.3
+"111","Blijdorp",0.4
+"112","Liskwartier",0.2
+"113","Oude Noorden",0.1
+"114","Blijdorpsepolder",1.1
+"115","Hillegersberg-Schiebroek",1.5
+"116","Schiebroek",1.5
+"117","Hillegersberg Zuid",0.2
+"118","Hillegersberg Noord",1.8
+"119","Terbregge",2.4
+"120","Molenlaankwartier",2.2
+"121","Kralingen-Crooswijk",0.3
+"122","Rubroek",0.3
+"123","Nieuw Crooswijk",0.2
+"124","Oud Crooswijk",0.2
+"125","Kralingen West",0.2
+"126","Kralingen Oost",0.4
+"127","Kralingse Bos",1.3
+"128","De Esch",0.7
+"129","Struisenburg",0.6
+"130","Feijenoord",0.3
+"131","Kop van Zuid",0.5
+"132","Kop van Zuid - Entrepot",0.4
+"133","Vreewijk",0.4
+"134","Bloemhof",0.2
+"135","Hillesluis",0.2
+"136","Katendrecht",0.2
+"137","Afrikaanderwijk",0.1
+"138","Feijenoord",0.2
+"139","Noordereiland",0.2
+"140","IJsselmonde",0.9
+"141","Oud IJsselmonde",0.9
+"142","Lombardijen",0.8
+"143","Groot IJsselmonde",1.1
+"144","Beverwaard",0.6
+"145","Pernis",5
+"146","Pernis",5
+"147","Prins Alexander",1.2
+"148","'s Gravenland",2
+"149","Kralingseveer",0.2
+"150","Prinsenland",1.2
+"151","Het Lage Land",0.5
+"152","Ommoord",1.3
+"153","Zevenkamp",0.6
+"154","Oosterflank",0.6
+"155","Nesselande",2.4
+"156","Charlois",0.6
+"157","Charlois Zuidrand",1.3
+"158","Tarwewijk",0.2
+"159","Carnisse",0.3
+"160","Zuidwijk",1.3
+"161","Oud Charlois",0.3
+"162","Wielewaal",0.9
+"163","Zuidplein",0.3
+"164","Pendrecht",0.5
+"165","Zuiderpark",0.7
+"166","Heijplaat",4.6
+"167","Hoogvliet",0.9
+"168","Hoogvliet Noord",0.9
+"169","Hoogvliet Zuid",0.8
+"170","Hoek van Holland",0.8
+"171","Strand en Duin",1.5
+"172","Dorp",0.6
+"173","Rijnpoort",2.3
+"174","Spaanse Polder",0.8
+"175","Spaanse Polder",0.8
+"176","Nieuw Mathenesse",0.4
+"177","Nieuw Mathenesse",0.4
+"178","Waalhaven-Eemhaven",4.1
+"179","Waalhaven",NA
+"180","Eemhaven",4.9
+"181","Waalhaven Zuid",NA
+"182","Vondelingenplaat",NA
+"183","Vondelingenplaat",NA
+"184","Botlek-Europoort-Maasvlakte",NA
+"185","Botlek",NA
+"186","Europoort",NA
+"187","Maasvlakte",NA
+"188","Rotterdam-Noord-West",0.6
+"189","Bedrijvenpark Noord-West",0.6
+"190","Rivium",NA
+"191","Rivium",NA
+"192","Bedrijventerrein Schieveen",NA
+"193","Bedrijventerrein Schieveen",NA
+"194","Rozenburg",0.7
+"195","Rozenburg",0.7
+"196","Noordzeeweg",NA
