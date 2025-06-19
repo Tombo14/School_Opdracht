@@ -96,7 +96,7 @@ Please use a separate 'R block' of code for each type of cleaning. So, e.g. one 
 
 ## 3.2 Generate necessary variables
 
-Variable 1
+Variable 1: Add a column, whether or not the distance to cafes is \>1
 
 ```{merged_data <- merged_data %>%}
   mutate(Distance_cafes = if_else(
