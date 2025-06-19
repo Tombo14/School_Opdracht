@@ -3,6 +3,12 @@ library(ggplot2)
 library(dplyr)
 library(sf)
 
+voorzieningen = mutate(voorzieningen, Distance_cafes = if_else(
+  Horeca.Cafés.en.dergelijke.Afstand.tot.café.e.d...km.> 1,
+  "Cafes further than 1 km",
+  "Cafes closer than 1 km"
+))
+
 #kaart provincie zuid-holland
 
 maps <- cbs_get_maps()
@@ -115,9 +121,9 @@ wijken_subset <- st_as_sf(wijken_subset_raw)
 
 merged_2016 <- st_as_sf(merged_2016)
 
-ggplot() +
 #  geom_sf(data = zh_sf, fill = "#e5f5f9", colour = "grey50") +
-  geom_sf(data = merged_2016,
+ggplot() +
+geom_sf(data = merged_2016,
           aes(fill = Distance_cafes), colour = "white", linewidth = .15) +
   theme_void() +
   coord_sf(
@@ -129,7 +135,21 @@ ggplot() +
        fill  = "Wijk") +
   guides(fill = guide_legend(override.aes = list(colour = "black")))
 
+write_csv(merged_2016, "data/merged_2016.csv")
+st_crs(merged_2016)
+
+library(sf)
 
 
+ggplot() +
+  geom_sf(data = merged_2016, aes(fill = Distance_cafes), colour = "white", linewidth = .15) +
+  theme_void() +
+  labs(title = sprintf("Wijken in Rotterdam & Krimpenerwaard (%s)", wijk_year),
+       fill  = "Wijk") +
+  guides(fill = guide_legend(override.aes = list(colour = "black")))
+
+
+
+#poging 12345678
 
 
