@@ -43,3 +43,23 @@ merged_data%>%
     y = "Unhealthiness Score"
   ) +
   theme_minimal()
+
+# Make sure the column with city name is correctly named
+# In your dataset it's likely:
+# "Regioaanduiding.Gemeentenaam..naam..x" or similar
+
+merged_data %>%
+  filter(Regioaanduiding.Gemeentenaam..naam..x %in% c("Rotterdam", "Krimpenerwaard")) %>%
+  group_by(Perioden, Regioaanduiding.Gemeentenaam..naam..x) %>%
+  summarise(avg_unhealthiness = mean(ongezondheid_score, na.rm = TRUE), .groups = "drop") %>%
+  ggplot(aes(x = Perioden, y = avg_unhealthiness, color = Regioaanduiding.Gemeentenaam..naam..x)) +
+  geom_line() +
+  scale_y_continuous(breaks = seq(11,17, by = 1), limits =c(11,17)) +
+  geom_point() +
+  labs(
+    title = "Average Unhealthiness Score: Rotterdam vs Krimpenerwaard",
+    x = "Year",
+    y = "Unhealthiness Score",
+    color = "Municipality"
+  ) +
+  theme_minimal()
