@@ -124,15 +124,14 @@ wijken_subset <- st_as_sf(wijken_subset_raw)
 merged_2016 <- st_as_sf(merged_2016)
 
 #  geom_sf(data = zh_sf, fill = "#e5f5f9", colour = "grey50") +
-ggplot() +
-geom_sf(data = merged_2016,
-          aes(fill = Distance_cafes), colour = "white", linewidth = .15) +
+ggplot(merged_2016, aes(fill = Distance_cafes)) +
+  geom_sf (color = "white", size = 0.15) +
+  scale_fill_gradient ("Cafes closer than 1 km"= "blue", "Cafes further than 1 km" = "red")
   theme_void() +
   coord_sf(
     xlim = c(65000, 135000),     # RD-coördinaten voor oost-west
     ylim = c(420000, 455000),    # RD-coördinaten voor noord-zuid
-    expand = FALSE
-  ) +
+    expand = FALSE) +
   labs(title = sprintf("Wijken in Rotterdam & Krimpenerwaard (%s)", wijk_year),
        fill  = "Wijk") +
   guides(fill = guide_legend(override.aes = list(colour = "black")))
