@@ -3,11 +3,13 @@ library(ggplot2)
 library(dplyr)
 library(sf)
 
-voorzieningen = mutate(voorzieningen, Distance_cafes = if_else(
+merged_data = mutate(voorzieningen, Distance_cafes = if_else(
   Horeca.Cafés.en.dergelijke.Afstand.tot.café.e.d...km.> 1,
   "Cafes further than 1 km",
   "Cafes closer than 1 km"
 ))
+
+
 
 #kaart provincie zuid-holland
 

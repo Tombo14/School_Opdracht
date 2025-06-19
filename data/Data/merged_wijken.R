@@ -33,10 +33,24 @@ wijken_subset <- st_as_sf(wijken_subset_raw)
 
 merged_2016 <- st_as_sf(merged_2016)
 
+
+
 merged_2016 <- merged_data %>%
   filter(Perioden == 2016)
+
 
 merged_wijken <- wijken_sf_raw %>%
   rename("Regioaanduiding.Codering..code." = "statcode")
 
 merged_2016 <- merged_2016 %>% full_join(merged_wijken, by = "Regioaanduiding.Codering..code.")
+
+
+#filter alleen wijken
+
+wijken_data <- merged_2016 %>%
+  filter(Regioaanduiding.Soort.regio..omschrijving..x == "Wijk")
+
+
+
+
+
