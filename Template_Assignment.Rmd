@@ -94,6 +94,14 @@ library(readr)
 nabijheid_voorzieningen2016 <- read_csv("nabijheid_voorzieningen2016.csv")
 nabijheid_voorzieningen2020 <- read_csv("nabijheid_voorzieningen2020.csv")
 nabijheid_voorzieningen2022 <- read_csv("nabijheid_voorzieningen2022.csv")
+merged_data <- nabijheid_voorzieningen2016 %>%
+  full_join(nabijheid_voorzieningen2020, by = "Regioaanduiding.Codering..code.", suffix = c("_2016", "_2020")) %>%
+  full_join(nabijheid_voorzieningen2022, by = "Regioaanduiding.Codering..code.")
+nabijheid_voorzieningen2016$...1 <- NULL
+voorzien <- rbind(nabijheid_voorzieningen2016, nabijheid_voorzieningen2020,nabijheid_voorzieningen2022)
+write_csv(voorzien,"data/Data/voorzieningen.csv")
+merged_data <- voorzien %>%
+  merge(AlcoholBuurten, by = "Regioaanduiding.Codering..code.")
 ```
 
 Please use a separate 'R block' of code for each type of cleaning. So, e.g. one for missing values, a new one for removing unnecessary variables etc.
