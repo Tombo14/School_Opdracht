@@ -122,8 +122,11 @@ Variable 2
 ## 3.4 Visualize spatial variation
 
 ```{r visualise_map}
+<<<<<<< HEAD
+=======
 
 ##### Poging 3 ------goeieee
+>>>>>>> 0f54cd522b26421a0fb8a624dda4d03d96abb1c2
 library(cbsodataR)
 library(ggplot2)
 library(dplyr)
