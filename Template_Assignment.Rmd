@@ -177,22 +177,26 @@ Here you provide a description of why the plot above is relevant to your specifi
 
 ## 3.5 Visualize sub-population variation
 
-What is the poverty rate by state?
+What is the average obesity rate from the different neighbourhoods. This plotted in a box plot against the percentage of excessive alcohol use.
 
 ```{r visualise_subpopulations}
-dataset$inmetro <- dataset$inmetro %>% as.factor()
-# Boxplot of poverty rate by state using the 'midwest' dataset
-ggplot(dataset, aes(x = inmetro, y = percadultpoverty)) +
+library(tidyverse)
+
+
+#omzetten naar numeric + calculating average obesity rate
+mean(as.numeric(merged_2016$Onder..en.overgewicht.Mate.van.overgewicht.Ernstig.overgewicht....), na.rm = TRUE) #15.56333
+
+#subgroup
+merged_2016 = mutate(merged_2016, Obesity_rate = ifelse(Onder..en.overgewicht.Mate.van.overgewicht.Ernstig.overgewicht.... >=15.56333,
+                                                   "Above_average", "Below_average"))
+
+write.csv(merged_2016, "Data/data/merged_2016.csv")
+merged_2016$Alcoholgebruik.Overmatige.drinker.... <- merged_2016$Alcoholgebruik.Overmatige.drinker.... %>% as.numeric()
+
+#plotten
+ggplot(merged_2016, aes(x=Obesity_rate, y=Alcoholgebruik.Overmatige.drinker....))+
   geom_boxplot() +
-  labs(
-    title = "Distribution of Poverty Rates by Metropolitan status (Midwest counties)",
-    x = "Metropolitan Area",
-    y = "Poverty Rate of Adults (%)"
-  ) +
-  theme_minimal() +
-  theme(
-    legend.position = "right"
-  )
+  labs(x="Obesity rate", y="Percentage of excessive alcohol use", title = "Alcohol vs obesity rate 2016")
 ```
 
 Here you provide a description of why the plot above is relevant to your specific social problem.
