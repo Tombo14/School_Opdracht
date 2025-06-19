@@ -107,10 +107,22 @@ Variable 1
 
 ```
 
-Variable 2
+Variable 2 Kort beschrijven wat ongezondheidsscore inhoudt, gemiddelde van de onderstaande ongezondheidsfactoren.in het engels natuurlijk
 
 ```{r gen_var2}
-#Zet komma's naar punten en maak getallen van tekens
+library(dplyr)
+
+# Kolommen selecteren voor de score
+cols_to_convert <- c(
+  "Roker....",
+  "Alcoholgebruik.Zware.drinker....",
+  "Alcoholgebruik.Overmatige.drinker....",
+  "Lichamelijke.gezondheid.Eén.of.meer.langdurige.aandoeningen....",
+  "Hoog.risico.op.angst.of.depressie....",
+  "Eenzaamheid.Ernstig.zeer.ernstig.eenzaam...."
+)
+
+# Zet komma's naar punten en maak getallen van tekens
 merged_data[cols_to_convert] <- lapply(merged_data[cols_to_convert], function(x) {
   x <- gsub(",", ".", x)
   as.numeric(x)
@@ -122,9 +134,12 @@ merged_data <- merged_data %>%
     ongezondheid_score = rowMeans(select(., all_of(cols_to_convert)), na.rm = TRUE)
   )
 
-library(dplyr)
-library(ggplot2)
 
+```
+
+## 3.3 Visualize temporal variation
+
+```{r}
 # Gemiddelde ongezondheid_score per jaar berekenen
 library(dplyr)
 library(ggplot2)
@@ -143,13 +158,6 @@ merged_data%>%
     y = "Unhealthiness Score"
   ) +
   theme_minimal()
-
-```
-
-## 3.3 Visualize temporal variation
-
-```{r}
-
 ```
 
 ## 3.4 Visualize spatial variation
