@@ -1,5 +1,10 @@
 library(dplyr)
 library(readr)
+nabijheid_voorzieningen2016 <- read_csv("nabijheid_voorzieningen2016.csv")
+nabijheid_voorzieningen2020 <- read_csv("nabijheid_voorzieningen2020.csv")
+nabijheid_voorzieningen2022 <- read_csv("nabijheid_voorzieningen2022.csv")
+
+
 nabijheid_voorzieningen2016 <- read_csv("~/Documents/School_Opdracht/data/Data/nabijheid_voorzieningen2016.csv")
 nabijheid_voorzieningen2020 <- read_csv("~/Documents/School_Opdracht/data/Data/nabijheid_voorzieningen2020.csv")
 nabijheid_voorzieningen2022 <- read_csv("~/Documents/School_Opdracht/data/Data/nabijheid_voorzieningen2022.csv")
