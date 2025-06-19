@@ -21,3 +21,25 @@ merged_data <- merged_data %>%
   mutate(
     ongezondheid_score = rowMeans(select(., all_of(cols_to_convert)), na.rm = TRUE)
   )
+
+library(dplyr)
+library(ggplot2)
+
+# Gemiddelde ongezondheid_score per jaar berekenen
+library(dplyr)
+library(ggplot2)
+
+# Calculate average unhealthiness score per year and plot
+merged_data%>%
+  group_by(Perioden) %>%
+  summarise(avg_unhealthiness = mean(ongezondheid_score, na.rm = TRUE)) %>%
+  ggplot(aes(x = Perioden, y = avg_unhealthiness)) +
+  geom_line() +
+  geom_point() +
+  scale_y_continuous(breaks = c(20:35)*0.5, limits =c(12,17))+
+  labs(
+    title = "Average Unhealthiness Score per Year",
+    x = "Year",
+    y = "Unhealthiness Score"
+  ) +
+  theme_minimal()
