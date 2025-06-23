@@ -136,7 +136,7 @@ Variable 1: Add a column, whether or not the distance to cafes is \>1
 
 ```
 
-Variable 2 Kort beschrijven wat ongezondheidsscore inhoudt, gemiddelde van de onderstaande ongezondheidsfactoren.in het engels natuurlijk
+Variable 2: Unhealthiness Score, Kort beschrijven wat ongezondheidsscore inhoudt, gemiddelde van de onderstaande ongezondheidsfactoren.in het engels natuurlijk
 
 ```{r gen_var2}
 library(dplyr)
@@ -294,7 +294,7 @@ Here you provide a description of why the plot above is relevant to your specifi
 
 ## 3.5 Visualize sub-population variation
 
-What is the average obesity rate from the different neighbourhoods. This plotted in a box plot against the percentage of excessive alcohol use.
+What is the average obesity rate from the different neighbourhoods in Krimpenerwaard and Rotterdam. This plotted in a box plot against the percentage of excessive alcohol use.
 
 ```{r visualise_subpopulations}
 library(tidyverse)
@@ -376,7 +376,7 @@ Here you provide a description of why the plot above is relevant to your specifi
 
 ## 5.1 Github repository link
 
-Provide the link to your PUBLIC repository here: ...
+Provide the link to your PUBLIC repository here: <https://github.com/Tombo14/School_Opdracht>
 
 ## 5.2 Reference list
 
