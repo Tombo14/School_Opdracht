@@ -28,7 +28,7 @@ Include your tutorial lecturer's name
 
 Use APA referencing throughout your document. [Here's a link to some explanation.](https://www.mendeley.com/guides/apa-citation-guide/)
 
-## 1.1 Describe the Social Problem
+## 1.1 Describe the Social Problem (Isabel)
 
 Include the following:
 
@@ -60,7 +60,7 @@ Nabijheid_voorzieningen2022 <- read_csv("nabijheid_voorzieningen2022.csv")
 
 midwest is an example dataset included in the tidyverse package
 
-## 2.2 Provide a short summary of the dataset(s)
+## 2.2 Provide a short summary of the dataset(s) (Levi)
 
 ```{r}
 #head(dataset)
@@ -74,7 +74,7 @@ inline_code = TRUE
 
 These are things that are usually included in the metadata of the dataset. For your project, you need to provide us with the information from your metadata that we need to understand your dataset of choice.
 
-## 2.3 Describe the type of variables included
+## 2.3 Describe the type of variables included (Levi)
 
 Think of things like:
 
@@ -123,7 +123,7 @@ write_csv(merged_data,"data/Data/merged_data.csv")
 
 Please use a separate 'R block' of code for each type of cleaning. So, e.g. one for missing values, a new one for removing unnecessary variables etc.
 
-## 3.2 Generate necessary variables
+## 3.2 Generate necessary variables (Isabel)
 
 Variable 1: Add a column, whether or not the distance to cafes is \>1
 
@@ -166,7 +166,7 @@ merged_data <- merged_data %>%
 
 ```
 
-## 3.3 Visualize temporal variation
+## 3.3 Visualize temporal variation (Levi)
 
 ```{r}
 # Gemiddelde ongezondheid_score per jaar berekenen
@@ -193,7 +193,7 @@ merged_data %>%
   theme_minimal()
 ```
 
-## 3.4 Visualize spatial variation
+## 3.4 Visualize spatial variation (Isabel)
 
 ```{r visualise_map}
 
@@ -247,7 +247,7 @@ merged_2016 <- merged_2016 %>% merge(wijken_sf,
 
 
 
-##### Poging 3 ------goeieee
+##### Poging 3 ------
 library(cbsodataR)
 library(ggplot2)
 library(dplyr)
@@ -292,7 +292,7 @@ ggplot() +
 
 Here you provide a description of why the plot above is relevant to your specific social problem.
 
-## 3.5 Visualize sub-population variation
+## 3.5 Visualize sub-population variation (Levi)
 
 What is the average obesity rate from the different neighbourhoods in Krimpenerwaard and Rotterdam. This plotted in a box plot against the percentage of excessive alcohol use.
 
@@ -318,7 +318,7 @@ ggplot(merged_2016, aes(x=Obesity_rate, y=Alcoholgebruik.Overmatige.drinker....)
 
 Here you provide a description of why the plot above is relevant to your specific social problem.
 
-## 3.6 Event analysis
+## 3.6 Event analysis (Levi)
 
 Analyze the relationship between two variables.
 
