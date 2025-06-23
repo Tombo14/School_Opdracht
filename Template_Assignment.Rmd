@@ -93,6 +93,8 @@ Say we want to include only larger distances (above 2) in our dataset, we can fi
 ```{r data_cleaning}
 library(dplyr)
 library(readr)
+
+setwd("~/Documents/GitHub/School_Opdracht")
 nabijheid_voorzieningen2016 <- read_csv("nabijheid_voorzieningen2016.csv")
 nabijheid_voorzieningen2020 <- read_csv("nabijheid_voorzieningen2020.csv")
 nabijheid_voorzieningen2022 <- read_csv("nabijheid_voorzieningen2022.csv")
@@ -105,7 +107,6 @@ write_csv(voorzien,"data/Data/voorzieningen.csv")
 merged_data <- voorzien %>%
   merge(AlcoholBuurten, by = "Regioaanduiding.Codering..code.")
 
-setwd("~/Documents/GitHub/School_Opdracht")
 AlcoholBuurten <- read_csv("data/AlcoholBuurten.csv")
 nabijheid_voorzieningen2016$Perioden <- 2016
 nabijheid_voorzieningen2020$Perioden <- 2020
