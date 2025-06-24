@@ -239,12 +239,6 @@ prov_sf <- cbs_get_sf(region = "provincie", year = prov_map_yr)
 
 zh_sf <- prov_sf %>% filter(statnaam == "Zuid-Holland")
 
-ggplot(zh_sf) +
-  geom_sf(fill = "#2b8cbe", colour = "white") +
-  theme_void() +
-  labs(title = paste0("Provincie Zuid-Holland – CBS kaart ", prov_map_yr))
-
-muni_sf <- cbs_get_sf("provincie", prov_map_yr)
 
 #wijken en buurten er over heen
 prov_map_yr <- max(cbs_get_maps()$year[cbs_get_maps()$region == "provincie"])
