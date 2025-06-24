@@ -209,6 +209,21 @@ This map helps us to identify areas where people are more likely to have easy ac
 ```{r visualise_map}
 setwd("~/Documents/GitHub/School_Opdracht")
 
+if (!require("remotes")) install.packages("remotes")
+if (!require("sf")) install.packages("sf")
+if (!require("tidyverse")) install.packages("tidyverse")
+if (!require("cbsodataR")) install.packages("cbsodataR")
+  
+library(tidyverse)
+library(sf)
+library(cbsodataR)
+library(ggplot2)
+maps<- cbs_get_maps()
+prov_sf <- cbs_get_sf(region = "provincie", year = 2022)
+
+ggplot2::ggplot(prov_sf) +
+  geom_sf()
+  
 merged_data <- read_csv("data/Data/merged_data.csv")
 maps <- cbs_get_maps()
 prov_map_yr <- max(maps$year[maps$region == "provincie"])
@@ -308,7 +323,6 @@ What is the average obesity rate from the different neighbourhoods in Krimpenerw
 
 ```{r visualise_subpopulations}
 library(tidyverse)
-
 
 #omzetten naar numeric + calculating average obesity rate
 mean(as.numeric(merged_2016$Onder..en.overgewicht.Mate.van.overgewicht.Ernstig.overgewicht....), na.rm = TRUE) #15.56333
