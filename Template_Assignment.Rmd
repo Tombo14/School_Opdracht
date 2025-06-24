@@ -66,23 +66,31 @@ midwest is an example dataset included in the tidyverse package
 #head(dataset)
 ```
 
-In this case we see 28 variables, but we miss some information on what units they are in. We also don't know anything about the year/moment in which this data has been captured.
+After identifying the social problem and loading the datasets, we will examine these datasets and provide a summary of how they relate to our problem and what information we can actually obtain from them.
+
+We used three different points in time in combination with two variables in the datasets, “alcohol data” and “nabijheid voorzieningen”. Our datasets will provide us with a clear comparison, and by comparing them, we may even be able to identify some relationships between the variables.
+
+Now that the intentions of the use of our datasets are clear, what do our datasets tell us?
+
+The Alcohol_data_2016, Alcohol_data_2020, and Alcohol_data_2022 datasets contain health-related data at a “wijk/ buurt” or neighbourhood/ district level. The datasets contain information about a lot of different data points, such as alcohol use by age groups and health indicators that are possibly linked to alcohol.
+
+The nabijheid_voorzieningen2016, nabijheid_voorzieningen2020, and nabijheid_voorzieningen2022 datasets are used as a second variable, and these datasets contain information about access to local services such as bars, cafés, educational facility proximity, and supermarkets. These datasets are similar to the alcohol datasets, since both of them measure at the neighbourhood or district level.
+
+Both datasets are open data, “alcohol_data” is sourced from the Buurtatlas and the “nabijheid_voorzieningen” is sourced from CBS
 
 ``` r
 inline_code = TRUE
 ```
 
-These are things that are usually included in the metadata of the dataset. For your project, you need to provide us with the information from your metadata that we need to understand your dataset of choice.
-
 ## 2.3 Describe the type of variables included (Levi)
 
-Think of things like:
+When the datasets are talking about an "overmatige drinker", it's talking about excessive drinkers, so men who drink \>= 21 glasses per week, or women who drink \>= 14 glasses per week.
 
--   Do the variables contain health information or SES information?
+Both datasets contain the date as the year and have identifier codes that correspond with the neighbourhood or district to which the rest of the data in that row is linked. Both also contain categorical variables like names of the neighbourhood or district, while only alcohol_data also contains data about the age and gender of people used to create the data
 
--   Have they been measured by interviewing individuals or is the data coming from administrative sources?
+percentage_overmatig_drinken is a prominent variable in the alcohol_data dataset, which gives us a percentage of excessive drinkers.
 
-*For the sake of this example, I will continue with the assignment...*
+The datasets for “alcohol_data” were created from a health monitor in the Netherlands, utilizing data from multiple data collection sources. Buurtatlas used sample-sized groups to conclude about the data created, having between 350.000 and 550.000 respondents.
 
 # Part 3 - Quantifying
 
@@ -166,7 +174,7 @@ merged_data <- merged_data %>%
 
 ```
 
-## 3.3 Visualize temporal variation (Levi)
+## 3.3 Visualize temporal variation (Isabel)
 
 ```{r}
 # Gemiddelde ongezondheid_score per jaar berekenen
@@ -294,13 +302,13 @@ Here you provide a description of why the plot above is relevant to your specifi
 
 ## 3.5 Visualize sub-population variation (Levi)
 
-What is the average obesity rate from the different neighbourhoods. This plotted in a box plot against the percentage of excessive alcohol use.
+What is the average obesity rate in the different neighbourhoods? This is plotted in a box plot against the percentage of excessive alcohol use.
 
 ```{r visualise_subpopulations}
 library(tidyverse)
 
 
-#omzetten naar numeric + calculating average obesity rate
+#convert to numeric + calculating average obesity rate
 mean(as.numeric(merged_2016$Onder..en.overgewicht.Mate.van.overgewicht.Ernstig.overgewicht....), na.rm = TRUE) #15.56333
 
 #subgroup
@@ -310,17 +318,15 @@ merged_2016 = mutate(merged_2016, Obesity_rate = ifelse(Onder..en.overgewicht.Ma
 write.csv(merged_2016, "Data/data/merged_2016.csv")
 merged_2016$Alcoholgebruik.Overmatige.drinker.... <- merged_2016$Alcoholgebruik.Overmatige.drinker.... %>% as.numeric()
 
-#plotten
+#plotting
 ggplot(merged_2016, aes(x=Obesity_rate, y=Alcoholgebruik.Overmatige.drinker....))+
   geom_boxplot() +
   labs(x="Obesity rate", y="Percentage of excessive alcohol use", title = "Alcohol vs obesity rate 2016")
 ```
 
-Here you provide a description of why the plot above is relevant to your specific social problem.
+The boxplot is relevant to our specific social problem since it gives an easy and clear overview of the percentage of excessive alcohol use in combination with above or below average obesity rates in Krimpenerwaard and Rotterdam. Our plot is mainly important for clearly stating whether there is a strong correlation between heavy drinkers and obesity rates within an average neighborhood in 2016.  
 
 ## 3.6 Event analysis (Levi)
-
-Analyze the relationship between two variables.
 
 ```{r analysis}
 library(dplyr)
@@ -366,11 +372,17 @@ ggplot(wijken_data, aes(
 
 ```
 
-Here you provide a description of why the plot above is relevant to your specific social problem.
+The graph gives us the relationship between the years 2016, 2018, 2020, 2022, and the percentage of excessive alcohol consumption per neighbourhood over this period of time. Each colored line represents a different neighbourhood, and the combination of all these variables gives a somewhat consistent outcome for each neighbourhood. The vertical line is representative of the “COVID-19 Crisis”, since this crisis would be the cause of a noticeable decline in excessive drinking from 2016 to 2020. The graph also shows that after COVID-19, the amount of excessive drinkers returned to their original state, and for some neighbourhoods, even ended up higher than before COVID-19.
+
+This graph would be relevant to our research on alcohol abuse and access to local services, since most of these local services where you would be able to drink alcohol were closed during COVID-19, so this shows the strong correlation that these variables ultimately have, regardless of the distance between residents and their local services such as bars and café’s.
 
 # Part 4 - Discussion
 
 ## 4.1 Discuss your findings
+
+Since each box in the boxplot of part 3.5 represents the distribution of excessive alcohol usage within the above-average and below-average obesity rates, we can conclude from this graph that the above-average group shows higher variation in excessive alcohol usage. The group with below-average obesity rates has a tighter distribution of excessive alcohol usage, but has more outliers in both directions of the boxplot. This tells us that areas with higher obesity rates may also tend to have more variation in alcohol behaviour, and since both alcohol usage and obesity rates are major public health concerns, this graph would be especially useful for our problem.
+
+The graph of 3.6 shows heavy drinking dropped during the 2020 COVID-19 pandemic in every neighborhood, perhaps due to lockdowns and limited nightlife availability, such as access to local services such as bars and café’e. However, by 2022, consumption levels had returned in most neighborhoods, especially cities. This reflects a return to pre-pandemic behaviors and the continuation of regional differences in alcohol consumption.
 
 # Part 5 - Reproducibility
 
