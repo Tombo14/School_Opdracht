@@ -114,7 +114,7 @@ write_csv(merged_data,"data/Data/merged_data.csv")
 
 ## 3.2 Generate necessary variables (Isabel)
 
-**Variable 1:** \
+**Variable 1:**\
 First we created the new variable Distance_cafes, we created this one to classify whether the distance to facilities as cafes, nightclubs, coffeeshops and other party centers are located closer or further than 1 kilometer averagely for people from Rotterdam and Krimpenerwaard. We introduced this categorization (“Cafes closer than 1 km” vs. “Cafes further than 1km”) to make it easier to analyze whether proximity to facilities is associated with patterns of excessive alcohol use. By simplifying this distance measure, we can more clearly examine potential relationships between access to drinking venues and alcohol consumption behavior.
 
 ```{merged_data <- merged_data %>%}
@@ -126,7 +126,7 @@ First we created the new variable Distance_cafes, we created this one to classif
 
 ```
 
-**Variable 2:** \
+**Variable 2:**\
 The second variable Unhealthiness score represents the average level of several key health risk factors within a given population. We calculated this as the mean of the following six indicators, all looking at both Rotterdam & Krimpenerwaard:\
 - Percentage of smokers\
 - Percentage of heavy drinkers\
@@ -194,7 +194,7 @@ merged_data %>%
   theme_minimal()
 ```
 
-## 3.4 Visualize spatial variation 
+## 3.4 Visualize spatial variation
 
 This map “Neighbourhoods in Rotterdam & Krimpenerwaard (2024) is based on their proximity to facilities to buy alcohol, such as cafes, nightclubs, coffeeshops and other party centers. It uses the first new variable we created: Distance_cafes.
 
@@ -209,6 +209,21 @@ This map helps us to identify areas where people are more likely to have easy ac
 ```{r visualise_map}
 setwd("~/Documents/GitHub/School_Opdracht")
 
+if (!require("remotes")) install.packages("remotes")
+if (!require("sf")) install.packages("sf")
+if (!require("tidyverse")) install.packages("tidyverse")
+if (!require("cbsodataR")) install.packages("cbsodataR")
+  
+library(tidyverse)
+library(sf)
+library(cbsodataR)
+library(ggplot2)
+maps<- cbs_get_maps()
+prov_sf <- cbs_get_sf(region = "provincie", year = 2022)
+
+ggplot2::ggplot(prov_sf) +
+  geom_sf()
+  
 merged_data <- read_csv("data/Data/merged_data.csv")
 maps <- cbs_get_maps()
 prov_map_yr <- max(maps$year[maps$region == "provincie"])
@@ -302,13 +317,12 @@ ggplot() +
 
 ```
 
-## 3.5 Visualize sub-population variation 
+## 3.5 Visualize sub-population variation
 
 What is the average obesity rate from the different neighbourhoods in Krimpenerwaard and Rotterdam. This plotted in a box plot against the percentage of excessive alcohol use.
 
 ```{r visualise_subpopulations}
 library(tidyverse)
-
 
 #omzetten naar numeric + calculating average obesity rate
 mean(as.numeric(merged_2016$Onder..en.overgewicht.Mate.van.overgewicht.Ernstig.overgewicht....), na.rm = TRUE) #15.56333
@@ -326,7 +340,7 @@ ggplot(merged_2016, aes(x=Obesity_rate, y=Alcoholgebruik.Overmatige.drinker....)
   labs(x="Obesity rate", y="Percentage of excessive alcohol use", title = "Alcohol vs obesity rate 2016")
 ```
 
-## 3.6 Event analysis 
+## 3.6 Event analysis
 
 Analyze the relationship between two variables.
 
