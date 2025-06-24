@@ -344,13 +344,8 @@ What is the average obesity rate in the different neighbourhoods? This is plotte
 ```{r visualise_subpopulations}
 library(tidyverse)
 
-<<<<<<< HEAD
+mean(as.numeric(merged_2016$Onder.en.overgewicht.Mate.van.overgewicht.Ernstig.overgewicht....), na.rm = TRUE) >= 15.56333
 
-#convert to numeric + calculating average obesity rate
-=======
-#omzetten naar numeric + calculating average obesity rate
->>>>>>> 20ceac32bfd214fa893f843dcdb8670c96539412
-mean(as.numeric(merged_2016$Onder..en.overgewicht.Mate.van.overgewicht.Ernstig.overgewicht....), na.rm = TRUE) #15.56333
 
 #subgroup
 merged_2016 = mutate(merged_2016, Obesity_rate = ifelse(Onder..en.overgewicht.Mate.van.overgewicht.Ernstig.overgewicht.... >=15.56333,
