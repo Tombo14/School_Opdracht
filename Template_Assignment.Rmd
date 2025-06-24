@@ -332,11 +332,10 @@ ggplot() +
 
 What is the average obesity rate from the different neighbourhoods in Krimpenerwaard and Rotterdam. This plotted in a box plot against the percentage of excessive alcohol use.
 
-<<<<<<< HEAD
 What is the average obesity rate in the different neighbourhoods? This is plotted in a box plot against the percentage of excessive alcohol use.
 =======
 \* On some of our laptops the code of the graphs runned totally fine and on some it didn’t work. If the code doesn’t load, please let us know.
->>>>>>> 20ceac32bfd214fa893f843dcdb8670c96539412
+
 
 ```{r visualise_subpopulations}
 library(tidyverse)
@@ -357,13 +356,10 @@ ggplot(merged_2016, aes(x=Obesity_rate, y=Alcoholgebruik.Overmatige.drinker....)
   labs(x="Obesity rate", y="Percentage of excessive alcohol use", title = "Alcohol vs obesity rate 2016")
 ```
 
-<<<<<<< HEAD
 The boxplot is relevant to our specific social problem since it gives an easy and clear overview of the percentage of excessive alcohol use in combination with above or below average obesity rates in Krimpenerwaard and Rotterdam. Our plot is mainly important for clearly stating whether there is a strong correlation between heavy drinkers and obesity rates within an average neighborhood in 2016.  
 
-## 3.6 Event analysis (Levi)
-=======
+
 ## 3.6 Event analysis
->>>>>>> 20ceac32bfd214fa893f843dcdb8670c96539412
 
 ```{r analysis}
 library(dplyr)
@@ -409,13 +405,11 @@ ggplot(wijken_data, aes(
 
 ```
 
-<<<<<<< HEAD
 The graph gives us the relationship between the years 2016, 2018, 2020, 2022, and the percentage of excessive alcohol consumption per neighbourhood over this period of time. Each colored line represents a different neighbourhood, and the combination of all these variables gives a somewhat consistent outcome for each neighbourhood. The vertical line is representative of the “COVID-19 Crisis”, since this crisis would be the cause of a noticeable decline in excessive drinking from 2016 to 2020. The graph also shows that after COVID-19, the amount of excessive drinkers returned to their original state, and for some neighbourhoods, even ended up higher than before COVID-19.
 
 This graph would be relevant to our research on alcohol abuse and access to local services, since most of these local services where you would be able to drink alcohol were closed during COVID-19, so this shows the strong correlation that these variables ultimately have, regardless of the distance between residents and their local services such as bars and café’s.
 
-=======
->>>>>>> 20ceac32bfd214fa893f843dcdb8670c96539412
+
 # Part 4 - Discussion
 
 ## 4.1 Discuss your findings
@@ -432,7 +426,6 @@ The key observation from this graph is that Rotterdam consistently has a higher 
 
 **3.4 visualize spatial variation**\
 In Rotterdam, which is on the left side of the map, you can see that most of the neighborhoods are colored red, meaning cafés are generally very accessible. That fits with what we’d expect in a large, urban city like Rotterdam. Comparing this to Krimpenerwaard, on the right side of the map, there are more blue areas. This means there is more rural character and thus a greater distance to cafés. This difference between areas supports further analysis on how the distance to cafés might relate to excessive alcohol use, as previously discussed.
->>>>>>> 20ceac32bfd214fa893f843dcdb8670c96539412
 
 # Part 5 - Reproducibility
 
