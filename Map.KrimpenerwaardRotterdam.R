@@ -1,3 +1,4 @@
+setwd("~/Documents/GitHub/School_Opdracht")
 merged_data <- read_csv("data/Data/merged_data.csv")
 maps <- cbs_get_maps()
 prov_map_yr <- max(maps$year[maps$region == "provincie"])
@@ -87,3 +88,4 @@ ggplot() +
   labs(title = sprintf("Neighbourhoods in Rotterdam & Krimpenerwaard (%s)", wijk_year),
        fill  = "Neighbourhood") +
   guides(fill = guide_legend(override.aes = list(colour = "black")))
+
