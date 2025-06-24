@@ -15,8 +15,6 @@ output: pdf_document
 require(tidyverse)
 library(readr)
 
-knitr::opts_chunk$set(echo = FALSE)
-
 ```
 
 # Excessive alcohol use in The Netherlands
