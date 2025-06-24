@@ -14,6 +14,9 @@ output: pdf_document
 ```{r packages}
 require(tidyverse)
 library(readr)
+
+knitr::opts_chunk$set(echo = FALSE)
+
 ```
 
 # Excessive alcohol use in The Netherlands
@@ -227,12 +230,7 @@ library(tidyverse)
 library(sf)
 library(cbsodataR)
 library(ggplot2)
-maps<- cbs_get_maps()
-prov_sf <- cbs_get_sf(region = "provincie", year = 2022)
-
-ggplot2::ggplot(prov_sf) +
-  geom_sf()
-  
+setwd("~/Documents/GitHub/School_Opdracht")
 merged_data <- read_csv("data/Data/merged_data.csv")
 maps <- cbs_get_maps()
 prov_map_yr <- max(maps$year[maps$region == "provincie"])
@@ -283,7 +281,7 @@ merged_2016 <- merged_2016 %>% merge(wijken_sf,
 
 
 
-##### Poging 3 ------
+##### Poging 3 ------goeieee
 library(cbsodataR)
 library(ggplot2)
 library(dplyr)
