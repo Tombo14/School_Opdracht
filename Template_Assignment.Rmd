@@ -68,7 +68,7 @@ The Alcohol_data_2016, Alcohol_data_2020, and Alcohol_data_2022 datasets contain
 
 The nabijheid_voorzieningen2016, nabijheid_voorzieningen2020, and nabijheid_voorzieningen2022 datasets are used as a second variable, and these datasets contain information about access to local services such as bars, cafés, educational facility proximity, and supermarkets. These datasets are similar to the alcohol datasets, since both of them measure at the neighbourhood or district level.
 
-Both datasets are open data, “alcohol_data” is sourced from the Buurtatlas and the “nabijheid_voorzieningen” is sourced from CBS
+Both datasets are open data, “alcohol_data” is sourced from the Buurtatlas and the “nabijheid_voorzieningen” is sourced from CBS.
 
 ``` r
 inline_code = TRUE
@@ -78,7 +78,7 @@ inline_code = TRUE
 
 When the datasets are talking about an "overmatige drinker", it's talking about excessive drinkers, so men who drink \>= 21 glasses per week, or women who drink \>= 14 glasses per week.
 
-Both datasets contain the date as the year and have identifier codes that correspond with the neighbourhood or district to which the rest of the data in that row is linked. Both also contain categorical variables like names of the neighbourhood or district, while only alcohol_data also contains data about the age and gender of people used to create the data
+Both datasets contain the date as the year and have identifier codes that correspond with the neighborhood or district to which the rest of the data in that row is linked. Both also contain categorical variables like names of the neighborhood or district, while only alcohol_data also contains data about the age and gender of people used to create the data
 
 percentage_overmatig_drinken is a prominent variable in the alcohol_data dataset, which gives us a percentage of excessive drinkers.
 
@@ -214,8 +214,6 @@ This map “Neighborhoods in Rotterdam & Krimpenerwaard (2024) is based on their
 
 This map helps us to identify areas where people are more likely to have easy access to drinking venues, which could contribute to higher alcohol consumption.
 
-\* On some of our laptops the code of the graph runned totally fine and on some it didn’t work. If the code doesn’t load, please let us know.
-
 ```{r visualise_map}
 setwd("~/Documents/GitHub/School_Opdracht")
 
@@ -329,11 +327,7 @@ ggplot() +
 
 ## 3.5 Visualize sub-population variation
 
-What is the average obesity rate from the different neighbourhoods in Krimpenerwaard and Rotterdam. This plotted in a box plot against the percentage of excessive alcohol use.
-
-# What is the average obesity rate in the different neighbourhoods? This is plotted in a box plot against the percentage of excessive alcohol use.
-
-\* On some of our laptops the code of the graphs runned totally fine and on some it didn’t work. If the code doesn’t load, please let us know.
+The boxplot is relevant to our specific social problem since it gives an easy and clear overview of the percentage of excessive alcohol use in combination with above or below average obesity rates in Krimpenerwaard and Rotterdam. Our plot is mainly important for clearly stating whether there is a strong correlation between heavy drinkers and obesity rates within an average neighborhood in 2016.  
 
 ```{r visualise_subpopulations}
 library(tidyverse)
@@ -354,9 +348,11 @@ ggplot(merged_2016, aes(x=Obesity_rate, y=Alcoholgebruik.Overmatige.drinker....)
   labs(x="Obesity rate", y="Percentage of excessive alcohol use", title = "Alcohol vs obesity rate 2016")
 ```
 
-The boxplot is relevant to our specific social problem since it gives an easy and clear overview of the percentage of excessive alcohol use in combination with above or below average obesity rates in Krimpenerwaard and Rotterdam. Our plot is mainly important for clearly stating whether there is a strong correlation between heavy drinkers and obesity rates within an average neighborhood in 2016.  
-
 ## 3.6 Event analysis
+
+The graph gives us the relationship between the years 2016, 2018, 2020, 2022, and the percentage of excessive alcohol consumption per neighbourhood over this period of time. Each colored line represents a different neighbourhood, and the combination of all these variables gives a somewhat consistent outcome for each neighbourhood. The vertical line is representative of the “COVID-19 Crisis”, since this crisis would be the cause of a noticeable decline in excessive drinking from 2016 to 2020. The graph also shows that after COVID-19, the amount of excessive drinkers returned to their original state, and for some neighbourhoods, even ended up higher than before COVID-19.
+
+This graph would be relevant to our research on alcohol abuse and access to local services, since most of these local services where you would be able to drink alcohol were closed during COVID-19, so this shows the strong correlation that these variables ultimately have, regardless of the distance between residents and their local services such as bars and café’s.
 
 ```{r analysis}
 library(dplyr)
@@ -402,17 +398,9 @@ ggplot(wijken_data, aes(
 
 ```
 
-The graph gives us the relationship between the years 2016, 2018, 2020, 2022, and the percentage of excessive alcohol consumption per neighbourhood over this period of time. Each colored line represents a different neighbourhood, and the combination of all these variables gives a somewhat consistent outcome for each neighbourhood. The vertical line is representative of the “COVID-19 Crisis”, since this crisis would be the cause of a noticeable decline in excessive drinking from 2016 to 2020. The graph also shows that after COVID-19, the amount of excessive drinkers returned to their original state, and for some neighbourhoods, even ended up higher than before COVID-19.
-
-This graph would be relevant to our research on alcohol abuse and access to local services, since most of these local services where you would be able to drink alcohol were closed during COVID-19, so this shows the strong correlation that these variables ultimately have, regardless of the distance between residents and their local services such as bars and café’s.
-
 # Part 4 - Discussion
 
 ## 4.1 Discuss your findings
-
-Since each box in the boxplot of part 3.5 represents the distribution of excessive alcohol usage within the above-average and below-average obesity rates, we can conclude from this graph that the above-average group shows higher variation in excessive alcohol usage. The group with below-average obesity rates has a tighter distribution of excessive alcohol usage, but has more outliers in both directions of the boxplot. This tells us that areas with higher obesity rates may also tend to have more variation in alcohol behaviour, and since both alcohol usage and obesity rates are major public health concerns, this graph would be especially useful for our problem.
-
-The graph of 3.6 shows heavy drinking dropped during the 2020 COVID-19 pandemic in every neighborhood, perhaps due to lockdowns and limited nightlife availability, such as access to local services such as bars and café’e. However, by 2022, consumption levels had returned in most neighborhoods, especially cities. This reflects a return to pre-pandemic behaviors and the continuation of regional differences in alcohol consumption.
 
 We will now discuss the findings per graph we made, since they are all so different from each other. Then, we will combine these findings to find a conclusion corresponding to all graphs.
 
@@ -422,6 +410,22 @@ The key observation from this graph is that Rotterdam consistently has a higher 
 **3.4 visualize spatial variation**\
 In Rotterdam, which is on the left side of the map, you can see that most of the neighborhoods are colored red, meaning cafés are generally very accessible. That fits with what we’d expect in a large, urban city like Rotterdam. Comparing this to Krimpenerwaard, on the right side of the map, there are more blue areas. This means there is more rural character and thus a greater distance to cafés. This difference between areas supports further analysis on how the distance to cafés might relate to excessive alcohol use, as previously discussed.
 
+**3.5 Visualize sub-population variation**\
+Since each box in the boxplot of part 3.5 represents the distribution of excessive alcohol usage within the above-average and below-average obesity rates, we can conclude from this graph that the above-average group shows higher variation in excessive alcohol usage. The group with below-average obesity rates has a tighter distribution of excessive alcohol usage, but has more outliers in both directions of the boxplot. This tells us that areas with higher obesity rates may also tend to have more variation in alcohol behaviour, and since both alcohol usage and obesity rates are major public health concerns, this graph would be especially useful for our problem.
+
+**3.6 Event analysis**\
+The graph of 3.6 shows heavy drinking dropped during the 2020 COVID-19 pandemic in every neighborhood, perhaps due to lockdowns and limited nightlife availability, such as access to local services such as bars and café’e. However, by 2022, consumption levels had returned in most neighborhoods, especially cities. This reflects a return to pre-pandemic behaviors and the continuation of regional differences in alcohol consumption.
+
+**Combined conclusions**
+
+1.  Urban areas show higher excessive alcohol risk - Rotterdam consistently shows a higher unhealthiness score and a closer distance to facilities than Krimpenerwaard. These factors suggest that urban areas may have higher levels of excessive alcohol consumption. Living in a city might make it easier or more tempting to drink more often or in larger amounts, simply because there are more cafés, bars, and social opportunities around.
+
+2.  COVID-19 temporarily reduced excessive alcohol use - In both urban and rural areas, there was a noticeable drop in heavy drinking during 202. This could likely be due to the pandemic where lockdowns and limited access to nightlife and cafés were going on. However, by 2022, alcohol use went up again and showed a return to a more pre-pandemic behavior. This could indicate that changes were temporary, not structural
+
+3.  Health disparities highlight at-risk-populations - The sub-population analysis reveals that areas with higher obesity rates also have more variation in excessive alcohol use. This may suggest that excessive drinking could occur with other health issues.
+
+4.  Persistent regional gaps in alcohol use - Even though drinking patterns changed over time, the difference between Rotterdam and Krimpenerwaard stayed about the same. This suggests that local factors like culture, the distance to cafés etc, and whether an area is more urban or rural, play a role in shaping how much people drink. 
+
 # Part 5 - Reproducibility
 
 ## 5.1 Github repository link
@@ -430,4 +434,4 @@ Provide the link to your PUBLIC repository here: <https://github.com/Tombo14/Sch
 
 ## 5.2 Reference list
 
-Use APA referencing throughout your document.
+SA Health. (n.d.). Health, safety, legal and social consequences of drinking too much. Retrieved June 24, 2025, from <https://www.sahealth.sa.gov.au/wps/wcm/connect/public+content/sa+health+internet/conditions/alcohol/health+safety+legal+and+social+consequences+of+drinking+too+much>
