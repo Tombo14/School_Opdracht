@@ -78,9 +78,7 @@ inline_code = TRUE
 
 When the datasets are talking about an "overmatige drinker", it's talking about excessive drinkers, so men who drink \>= 21 glasses per week, or women who drink \>= 14 glasses per week.
 
-Both datasets contain the date as the year and have identifier codes that correspond with the neighborhood or district to which the rest of the data in that row is linked. Both also contain categorical variables like names of the neighborhood or district, while only alcohol_data also contains data about the age and gender of people used to create the data
-
-percentage_overmatig_drinken is a prominent variable in the alcohol_data dataset, which gives us a percentage of excessive drinkers.
+Both datasets contain the date as the year and have identifier codes that correspond with the neighborhood or district to which the rest of the data in that row is linked. Both also contain categorical variables like names of the neighborhood or district, while only alcohol_data also contains data about the age and gender of people used to create the data_percentage_overmatig_drinken is a prominent variable in the alcohol_data dataset, which gives us a percentage of excessive drinkers.
 
 The datasets for “alcohol_data” were created from a health monitor in the Netherlands, utilizing data from multiple data collection sources. Buurtatlas used sample-sized groups to conclude about the data created, having between 350.000 and 550.000 respondents.
 
@@ -141,7 +139,8 @@ The second variable Unhealthiness score represents the average level of several 
 - Percentage of excessive drinkers\
 - Percentage reporting one or more chronic physical conditions\
 - Percentage at high risk of anxiety or depression\
-- Percentage experiencing serious or very serious loneliness
+- Percentage experiencing serious or very serious loneliness\
+This data was also retrieved from Rijksinstituut voor Volksgezondheid en Milieu (RIVM).
 
 By combining these indicators into a single score, we get a general measure of overall unhealthiness, making it way easier to compare regions. It also makes it easier to see how the health changed through the years in both places.
 
@@ -434,4 +433,14 @@ Provide the link to your PUBLIC repository here: <https://github.com/Tombo14/Sch
 
 ## 5.2 Reference list
 
-SA Health. (n.d.). Health, safety, legal and social consequences of drinking too much. Retrieved June 24, 2025, from <https://www.sahealth.sa.gov.au/wps/wcm/connect/public+content/sa+health+internet/conditions/alcohol/health+safety+legal+and+social+consequences+of+drinking+too+much>
+**Rijksinstituut voor Volksgezondheid en Milieu (RIVM). (n.d.).** *Buurtatlas – Overmatige drinkers*. RIVM / Buurtatlas. Retrieved June 10, 2025, from <https://buurtatlas.vzinfo.nl/#overmatige_drinkers>
+
+**Rijksinstituut voor Volksgezondheid en Milieu (RIVM). (2023).** *Gezondheid per wijk en buurt; indeling 2016.* RIVM StatLine. Retrieved June 11, 2025, from <https://statline.rivm.nl/#/RIVM/nl/dataset/50120NED/table?dl=C2E97> [[thuas.com+5data.overheid.nl+5statline.rivm.nl+5]{.underline}](https://data.overheid.nl/en/dataset/42936-gezondheid-per-wijk-en-buurt--2012-2016-2020-2022--indeling-2022-?utm_source=chatgpt.com){alt="https://data.overheid.nl/en/dataset/42936-gezondheid-per-wijk-en-buurt--2012-2016-2020-2022--indeling-2022-?utm_source=chatgpt.com"}
+
+**Rijksinstituut voor Volksgezondheid en Milieu (RIVM). (2023).** *Gezondheid per wijk en buurt; indeling 2020.* RIVM StatLine. Retrieved June 11, 2025, from <https://statline.rivm.nl/#/RIVM/nl/dataset/50120NED/table?dl=C2E95>
+
+**Rijksinstituut voor Volksgezondheid en Milieu (RIVM). (2023).** *Gezondheid per wijk en buurt; indeling 2022.* RIVM StatLine. Retrieved June 11, 2025, from <https://statline.rivm.nl/#/RIVM/nl/dataset/50120NED/table?dl=C2E96>
+
+**SA Health. (n.d.)**. *Health, safety, legal and social consequences of drinking too much*. Retrieved June 10, 2025, from <https://www.sahealth.sa.gov.au/wps/wcm/connect/public+content/sa+health+internet/conditions/alcohol/health+safety+legal+and+social+consequences+of+drinking+too+much>
+
+**Statistics Netherlands (CBS). (n.d.).** *Nabijheid voorzieningen; afstand locatie, regionale cijfers*. Statistics Netherlands. Retrieved Retrieved June 10, 2025, from <https://opendata.cbs.nl/statline/#/CBS/nl/dataset/80305ned/table?dl=C2E93>
