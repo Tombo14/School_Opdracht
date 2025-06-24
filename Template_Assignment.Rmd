@@ -52,7 +52,7 @@ Nabijheid_voorzieningen2022 <- read_csv("nabijheid_voorzieningen2022.csv")
 
 ```
 
-## 2.2 Provide a short summary of the dataset(s) (Levi)
+## 2.2 Provide a short summary of the dataset(s)
 
 ```{r}
 #head(dataset)
@@ -74,7 +74,7 @@ Both datasets are open data, “alcohol_data” is sourced from the Buurtatlas a
 inline_code = TRUE
 ```
 
-## 2.3 Describe the type of variables included (Levi)
+## 2.3 Describe the type of variables included
 
 When the datasets are talking about an "overmatige drinker", it's talking about excessive drinkers, so men who drink \>= 21 glasses per week, or women who drink \>= 14 glasses per week.
 
@@ -120,7 +120,7 @@ write_csv(merged_data,"data/Data/merged_data.csv")
 
 ```
 
-## 3.2 Generate necessary variables (Isabel)
+## 3.2 Generate necessary variables
 
 **Variable 1:**\
 First we created the new variable Distance_cafes, we created this one to classify whether the distance to facilities as cafes, nightclubs, coffee shops and other party centers are located closer or further than 1 kilometer averagely for people from Rotterdam and Krimpenerwaard. We introduced this categorization (“Cafes closer than 1 km” vs. “Cafes further than 1km”) to make it easier to analyze whether proximity to facilities is associated with patterns of excessive alcohol use. By simplifying this distance measure, we can more clearly examine potential relationships between access to drinking venues and alcohol consumption behavior.
