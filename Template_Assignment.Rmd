@@ -1,7 +1,7 @@
 ---
-title: "Template"
-author: "Studentnames and studentnumbers here"
-date: "`r Sys.Date()`"
+title: "Programming for economists project - excessive alcohol use in The Netherlands"
+author: "Derek van der Linden (2860655), Tom Haandrikman (2866711), Anouk Knaack (2772444), Sara Hoogenboom (2825231), Levi van der Kolk (...), Isabel Nagel (2812985)"
+date: "24-6-2025"
 output: pdf_document
 ---
 
@@ -16,31 +16,25 @@ require(tidyverse)
 library(readr)
 ```
 
-# Title Page
+# Excessive alcohol use in The Netherlands
 
-Include your names
+Derek van der Linden (2860655), Tom Haandrikman (2866711), Anouk Knaack (2772444), Sara Hoogenboom (2825231), Levi van der Kolk (...), Isabel Nagel (2812985)
 
-Include the tutorial group number
-
-Include your tutorial lecturer's name
+CPR02 - Chantal Schouwenaar,
 
 # Part 1 - Identify a Social Problem
 
-Use APA referencing throughout your document. [Here's a link to some explanation.](https://www.mendeley.com/guides/apa-citation-guide/)
+1.1 Describe the Social Problem
 
-## 1.1 Describe the Social Problem (Isabel)
+Our project is about the use of excessive alcohol in Rotterdam and a smaller town close to it called Krimpenerwaard. We are going to combine this with the distance to facilities to buy alcohol, such as cafes, nightclubs, coffeeshops and other party center. We are going to compare the two places with different years: 2016, 2020 and 2022. Also, we made a graph showing the overall unhealthiness combining different variables and comparing them with the different
 
-Include the following:
+Excessive drinking is a big societal problem and causes different issues, as well as health consequences, legal and social consequences. The excessive abuse of alcohol can affect your breathing, heart rate and gag reflex and also potentially lead to coma and death. It can also contribute to criminal behavior and many other social consequences, such as: financial problems due to excessive spending on alcohol, impacts on work performance and the loss of friends and family (SA Health, n.d.). 
 
--   Why is this relevant?
-
--   ...
+Of course, there has been much research into excessive alcohol use, but no research that aligns with that of ours; comparing a big city to a smaller town combined with the distance to facilities. In Rotterdam there is a higher accessibility of facilities than in Krimpenerwaard. Our research could provide us with insights into whether this difference influences people’s alcohol use. Also, the different years could show insights into if the covid-19 pandemic has had any influence on the use of excessive alcohol.
 
 # Part 2 - Data Sourcing
 
 ## 2.1 Load in the data
-
-Preferably from a URL, but if not, make sure to download the data and store it in a shared location that you can load the data in from. Do not store the data in a folder you include in the Github repository!
 
 ```{r loading_data}
 Alcohol_data_2016<- read_csv("data/Data/Gezondheid_per_wijk_en_buurt__2022_18062025_140754.csv")
@@ -57,8 +51,6 @@ Nabijheid_voorzieningen2022 <- read_csv("nabijheid_voorzieningen2022.csv")
 
 
 ```
-
-midwest is an example dataset included in the tidyverse package
 
 ## 2.2 Provide a short summary of the dataset(s) (Levi)
 
@@ -87,8 +79,6 @@ Think of things like:
 # Part 3 - Quantifying
 
 ## 3.1 Data cleaning
-
-Say we want to include only larger distances (above 2) in our dataset, we can filter for this.
 
 ```{r data_cleaning}
 library(dplyr)
@@ -122,11 +112,10 @@ write_csv(merged_data,"data/Data/merged_data.csv")
 
 ```
 
-Please use a separate 'R block' of code for each type of cleaning. So, e.g. one for missing values, a new one for removing unnecessary variables etc.
-
 ## 3.2 Generate necessary variables (Isabel)
 
-Variable 1: Add a column, whether or not the distance to cafes is \>1
+**Variable 1:** \
+First we created the new variable Distance_cafes, we created this one to classify whether the distance to facilities as cafes, nightclubs, coffeeshops and other party centers are located closer or further than 1 kilometer averagely for people from Rotterdam and Krimpenerwaard. We introduced this categorization (“Cafes closer than 1 km” vs. “Cafes further than 1km”) to make it easier to analyze whether proximity to facilities is associated with patterns of excessive alcohol use. By simplifying this distance measure, we can more clearly examine potential relationships between access to drinking venues and alcohol consumption behavior.
 
 ```{merged_data <- merged_data %>%}
   mutate(Distance_cafes = if_else(
@@ -137,12 +126,21 @@ Variable 1: Add a column, whether or not the distance to cafes is \>1
 
 ```
 
-Variable 2: Unhealthiness Score, Kort beschrijven wat ongezondheidsscore inhoudt, gemiddelde van de onderstaande ongezondheidsfactoren.in het engels natuurlijk
+**Variable 2:** \
+The second variable Unhealthiness score represents the average level of several key health risk factors within a given population. We calculated this as the mean of the following six indicators, all looking at both Rotterdam & Krimpenerwaard:\
+- Percentage of smokers\
+- Percentage of heavy drinkers\
+- Percentage of excessive drinkers\
+- Percentage reporting one or more chronic physical conditions\
+- Percentage at high risk of anxiety or depression\
+- Percentage experiencing serious or very serious loneliness
+
+By combining these indicators into a single score, we get a general measure of overall unhealthiness, making it way easier to compare regions. It also makes it easier to see how the health changed through the years in both places.
 
 ```{r gen_var2}
 library(dplyr)
 
-# Kolommen selecteren voor de score
+# Select columns to include in the score
 cols_to_convert <- c(
   "Roker....",
   "Alcoholgebruik.Zware.drinker....",
@@ -152,13 +150,13 @@ cols_to_convert <- c(
   "Eenzaamheid.Ernstig.zeer.ernstig.eenzaam...."
 )
 
-# Zet komma's naar punten en maak getallen van tekens
+# Replace commas with periods and convert character values to numeric
 merged_data[cols_to_convert] <- lapply(merged_data[cols_to_convert], function(x) {
   x <- gsub(",", ".", x)
   as.numeric(x)
 })
 
-# Bereken de ongezondheid_score als gemiddelde van de gekozen kolommen
+# Calculate the unhealthiness_score as the average of the selected columns
 merged_data <- merged_data %>%
   mutate(
     ongezondheid_score = rowMeans(select(., all_of(cols_to_convert)), na.rm = TRUE)
@@ -167,7 +165,9 @@ merged_data <- merged_data %>%
 
 ```
 
-## 3.3 Visualize temporal variation (Levi)
+## 3.3 Visualize temporal variation
+
+This line graph titled “Average Unhealthiness Score: Rotterdam vs Krimpenerwaard” uses our second new variable we’ve created. It compares the average unhealthiness scores of two places Rotterdam and Krimpeneraard, over three years: 2016, 2020 and 2022. This shows us very easily if the type of place, more urban like Rotterdam, or more rural and small-town like Krimpenerwaard, has any influence on the healthiness of the people that live there. In the discussions we will go further in the observations from this graph.
 
 ```{r}
 # Gemiddelde ongezondheid_score per jaar berekenen
@@ -194,7 +194,17 @@ merged_data %>%
   theme_minimal()
 ```
 
-## 3.4 Visualize spatial variation (Isabel)
+## 3.4 Visualize spatial variation 
+
+This map “Neighbourhoods in Rotterdam & Krimpenerwaard (2024) is based on their proximity to facilities to buy alcohol, such as cafes, nightclubs, coffeeshops and other party centers. It uses the first new variable we created: Distance_cafes.
+
+-   The Red (Cafes closer than 1 km) parts show us the part where the neighbourhoods have a café or similar venue within 1 kilometer.
+
+-   The blue/teal (Cafes further than 1 km) parts show where the neighbourhoods are that are more than 1 kilometer away from the nearest café or similar venue.
+
+-   Then we have the grey (NA) parts that have no data available for these neighbourhoods.
+
+This map helps us to identify areas where people are more likely to have easy access to drinking venues, which could contribute to higher alcohol consumption.
 
 ```{r visualise_map}
 
@@ -291,9 +301,7 @@ ggplot() +
 
 ```
 
-Here you provide a description of why the plot above is relevant to your specific social problem.
-
-## 3.5 Visualize sub-population variation (Levi)
+## 3.5 Visualize sub-population variation 
 
 What is the average obesity rate from the different neighbourhoods in Krimpenerwaard and Rotterdam. This plotted in a box plot against the percentage of excessive alcohol use.
 
@@ -317,9 +325,7 @@ ggplot(merged_2016, aes(x=Obesity_rate, y=Alcoholgebruik.Overmatige.drinker....)
   labs(x="Obesity rate", y="Percentage of excessive alcohol use", title = "Alcohol vs obesity rate 2016")
 ```
 
-Here you provide a description of why the plot above is relevant to your specific social problem.
-
-## 3.6 Event analysis (Levi)
+## 3.6 Event analysis 
 
 Analyze the relationship between two variables.
 
@@ -366,8 +372,6 @@ ggplot(wijken_data, aes(
     )
 
 ```
-
-Here you provide a description of why the plot above is relevant to your specific social problem.
 
 # Part 4 - Discussion
 
