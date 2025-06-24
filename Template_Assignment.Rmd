@@ -206,6 +206,8 @@ This map “Neighborhoods in Rotterdam & Krimpenerwaard (2024) is based on their
 
 This map helps us to identify areas where people are more likely to have easy access to drinking venues, which could contribute to higher alcohol consumption.
 
+\* On some of our laptops the code of the graph runned totally fine and on some it didn’t work. If the code doesn’t load, please let us know.
+
 ```{r visualise_map}
 setwd("~/Documents/GitHub/School_Opdracht")
 
@@ -320,6 +322,8 @@ ggplot() +
 ## 3.5 Visualize sub-population variation
 
 What is the average obesity rate from the different neighbourhoods in Krimpenerwaard and Rotterdam. This plotted in a box plot against the percentage of excessive alcohol use.
+
+\* On some of our laptops the code of the graphs runned totally fine and on some it didn’t work. If the code doesn’t load, please let us know.
 
 ```{r visualise_subpopulations}
 library(tidyverse)
