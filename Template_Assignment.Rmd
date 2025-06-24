@@ -103,7 +103,9 @@ write_csv(voorzien,"data/Data/voorzieningen.csv")
 merged_data <- voorzien %>%
   merge(AlcoholBuurten, by = "Regioaanduiding.Codering..code.")
 
-AlcoholBuurten <- read_csv("data/AlcoholBuurten.csv")
+setwd("~/Documents/GitHub/School_Opdracht")
+
+AlcoholBuurten <- read_csv("data/Data/AlcoholBuurten.csv")
 nabijheid_voorzieningen2016$Perioden <- 2016
 nabijheid_voorzieningen2020$Perioden <- 2020
 nabijheid_voorzieningen2022$Perioden <- 2022
