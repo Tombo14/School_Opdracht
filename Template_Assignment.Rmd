@@ -1,6 +1,6 @@
 ---
 title: "Programming for economists project - excessive alcohol use in The Netherlands"
-author: "Derek van der Linden (2860655), Tom Haandrikman (2866711), Anouk Knaack (2772444), Sara Hoogenboom (2825231), Levi van der Kolk (...), Isabel Nagel (2812985)"
+author: "Derek van der Linden (2860655), Tom Haandrikman (2866711), Anouk Knaack (2772444), Sara Hoogenboom (2825231), Levi van der Kolk (2857053), Isabel Nagel (2812985)"
 date: "24-6-2025"
 output: pdf_document
 ---
