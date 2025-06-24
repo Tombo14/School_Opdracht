@@ -207,6 +207,7 @@ This map “Neighbourhoods in Rotterdam & Krimpenerwaard (2024) is based on thei
 This map helps us to identify areas where people are more likely to have easy access to drinking venues, which could contribute to higher alcohol consumption.
 
 ```{r visualise_map}
+setwd("~/Documents/GitHub/School_Opdracht")
 
 merged_data <- read_csv("data/Data/merged_data.csv")
 maps <- cbs_get_maps()
