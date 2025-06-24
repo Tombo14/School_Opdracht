@@ -26,7 +26,7 @@ CPR02 - Chantal Schouwenaar,
 
 1.1 Describe the Social Problem
 
-Our project is about the use of excessive alcohol in Rotterdam and a smaller town close to it called Krimpenerwaard. We are going to combine this with the distance to facilities to buy alcohol, such as cafes, nightclubs, coffeeshops and other party center. We are going to compare the two places with different years: 2016, 2020 and 2022. Also, we made a graph showing the overall unhealthiness combining different variables and comparing them with the different
+Our project is about the use of excessive alcohol in Rotterdam and a smaller town close to it called Krimpenerwaard. We are going to combine this with the distance to facilities to buy alcohol, such as cafes, nightclubs, coffee shops and other party center. We are going to compare the two places with different years: 2016, 2020 and 2022. Also, we made a graph showing the overall unhealthiness combining different variables and comparing them with the different
 
 Excessive drinking is a big societal problem and causes different issues, as well as health consequences, legal and social consequences. The excessive abuse of alcohol can affect your breathing, heart rate and gag reflex and also potentially lead to coma and death. It can also contribute to criminal behavior and many other social consequences, such as: financial problems due to excessive spending on alcohol, impacts on work performance and the loss of friends and family (SA Health, n.d.). 
 
@@ -115,7 +115,7 @@ write_csv(merged_data,"data/Data/merged_data.csv")
 ## 3.2 Generate necessary variables (Isabel)
 
 **Variable 1:**\
-First we created the new variable Distance_cafes, we created this one to classify whether the distance to facilities as cafes, nightclubs, coffeeshops and other party centers are located closer or further than 1 kilometer averagely for people from Rotterdam and Krimpenerwaard. We introduced this categorization (“Cafes closer than 1 km” vs. “Cafes further than 1km”) to make it easier to analyze whether proximity to facilities is associated with patterns of excessive alcohol use. By simplifying this distance measure, we can more clearly examine potential relationships between access to drinking venues and alcohol consumption behavior.
+First we created the new variable Distance_cafes, we created this one to classify whether the distance to facilities as cafes, nightclubs, coffee shops and other party centers are located closer or further than 1 kilometer averagely for people from Rotterdam and Krimpenerwaard. We introduced this categorization (“Cafes closer than 1 km” vs. “Cafes further than 1km”) to make it easier to analyze whether proximity to facilities is associated with patterns of excessive alcohol use. By simplifying this distance measure, we can more clearly examine potential relationships between access to drinking venues and alcohol consumption behavior.
 
 ```{merged_data <- merged_data %>%}
   mutate(Distance_cafes = if_else(
@@ -198,9 +198,9 @@ merged_data %>%
 
 This map “Neighbourhoods in Rotterdam & Krimpenerwaard (2024) is based on their proximity to facilities to buy alcohol, such as cafes, nightclubs, coffeeshops and other party centers. It uses the first new variable we created: Distance_cafes.
 
--   The Red (Cafes closer than 1 km) parts show us the part where the neighbourhoods have a café or similar venue within 1 kilometer.
+-   The Red (Cafes closer than 1 km) parts show us the part where the neighbourhoods have a cafe or similar venue within 1 kilometer.
 
--   The blue/teal (Cafes further than 1 km) parts show where the neighbourhoods are that are more than 1 kilometer away from the nearest café or similar venue.
+-   The blue/teal (Cafes further than 1 km) parts show where the neighbourhoods are that are more than 1 kilometer away from the nearest cafe or similar venue.
 
 -   Then we have the grey (NA) parts that have no data available for these neighbourhoods.
 
@@ -377,6 +377,14 @@ ggplot(wijken_data, aes(
 # Part 4 - Discussion
 
 ## 4.1 Discuss your findings
+
+We will now discuss the findings per graph we made, since they are all so different from each other. Then, we will combine these findings to find a conclusion corresponding to all graphs.
+
+**3.3 visualize temporal variation**\
+The key observation from this graph is that Rotterdam consistently has a higher healthiness score than Krimpenerwaard in all years. Also, it is very clear that from both places the unhealthiness scores dropped in 2020. This could indicate a connection with the covid-19 crisis and the isolation that people were in, which made them live healthier. Both places are showing a U-shaped trend, meaning that unhealthiness decreased from 2016 to 2020 and then increased again by 2022. However, the gap between the both of them remains consistent, with Rotterdam showing higher levels of the unhealthiness score across all those time points. This could suggest that factors related to urban environments (as in Rotterdam) are associated with higher health risk indicators as in the unhealthiness score such as: smoking, heavy drinking, chronic illness, mental health issues and loneliness.
+
+**3.4 visualize spatial variation**\
+In Rotterdam, which is on the left side of the map, you can see that most of the neighborhoods are colored red, meaning cafés are generally very accessible. That fits with what we’d expect in a large, urban city like Rotterdam. Comparing this to Krimpenerwaard, on the right side of the map, there are more blue areas. This means there is more rural character and thus a greater distance to cafés. This difference between areas supports further analysis on how the distance to cafés might relate to excessive alcohol use, as previously discussed.
 
 # Part 5 - Reproducibility
 
