@@ -173,7 +173,6 @@ merged_data <- merged_data %>%
 
 ```
 
-
 ## 3.3 Visualize temporal variation
 
 This line graph titled “Average Unhealthiness Score: Rotterdam vs Krimpenerwaard” uses our second new variable we’ve created. It compares the average unhealthiness scores of two places Rotterdam and Krimpeneraard, over three years: 2016, 2020 and 2022. This shows us very easily if the type of place, more urban like Rotterdam, or more rural and small-town like Krimpenerwaard, has any influence on the healthiness of the people that live there. In the discussions we will go further in the observations from this graph.
@@ -332,10 +331,9 @@ ggplot() +
 
 What is the average obesity rate from the different neighbourhoods in Krimpenerwaard and Rotterdam. This plotted in a box plot against the percentage of excessive alcohol use.
 
-What is the average obesity rate in the different neighbourhoods? This is plotted in a box plot against the percentage of excessive alcohol use.
-=======
-\* On some of our laptops the code of the graphs runned totally fine and on some it didn’t work. If the code doesn’t load, please let us know.
+# What is the average obesity rate in the different neighbourhoods? This is plotted in a box plot against the percentage of excessive alcohol use.
 
+\* On some of our laptops the code of the graphs runned totally fine and on some it didn’t work. If the code doesn’t load, please let us know.
 
 ```{r visualise_subpopulations}
 library(tidyverse)
@@ -357,7 +355,6 @@ ggplot(merged_2016, aes(x=Obesity_rate, y=Alcoholgebruik.Overmatige.drinker....)
 ```
 
 The boxplot is relevant to our specific social problem since it gives an easy and clear overview of the percentage of excessive alcohol use in combination with above or below average obesity rates in Krimpenerwaard and Rotterdam. Our plot is mainly important for clearly stating whether there is a strong correlation between heavy drinkers and obesity rates within an average neighborhood in 2016.  
-
 
 ## 3.6 Event analysis
 
@@ -409,16 +406,14 @@ The graph gives us the relationship between the years 2016, 2018, 2020, 2022, an
 
 This graph would be relevant to our research on alcohol abuse and access to local services, since most of these local services where you would be able to drink alcohol were closed during COVID-19, so this shows the strong correlation that these variables ultimately have, regardless of the distance between residents and their local services such as bars and café’s.
 
-
 # Part 4 - Discussion
 
 ## 4.1 Discuss your findings
 
-<<<<<<< HEAD
 Since each box in the boxplot of part 3.5 represents the distribution of excessive alcohol usage within the above-average and below-average obesity rates, we can conclude from this graph that the above-average group shows higher variation in excessive alcohol usage. The group with below-average obesity rates has a tighter distribution of excessive alcohol usage, but has more outliers in both directions of the boxplot. This tells us that areas with higher obesity rates may also tend to have more variation in alcohol behaviour, and since both alcohol usage and obesity rates are major public health concerns, this graph would be especially useful for our problem.
 
 The graph of 3.6 shows heavy drinking dropped during the 2020 COVID-19 pandemic in every neighborhood, perhaps due to lockdowns and limited nightlife availability, such as access to local services such as bars and café’e. However, by 2022, consumption levels had returned in most neighborhoods, especially cities. This reflects a return to pre-pandemic behaviors and the continuation of regional differences in alcohol consumption.
-=======
+
 We will now discuss the findings per graph we made, since they are all so different from each other. Then, we will combine these findings to find a conclusion corresponding to all graphs.
 
 **3.3 visualize temporal variation**\
