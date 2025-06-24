@@ -197,6 +197,7 @@ merged_data %>%
 ## 3.4 Visualize spatial variation (Isabel)
 
 ```{r visualise_map}
+setwd("~/Documents/GitHub/School_Opdracht")
 
 merged_data <- read_csv("data/Data/merged_data.csv")
 maps <- cbs_get_maps()
