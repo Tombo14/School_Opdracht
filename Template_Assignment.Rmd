@@ -196,13 +196,13 @@ merged_data %>%
 
 ## 3.4 Visualize spatial variation
 
-This map “Neighbourhoods in Rotterdam & Krimpenerwaard (2024) is based on their proximity to facilities to buy alcohol, such as cafes, nightclubs, coffeeshops and other party centers. It uses the first new variable we created: Distance_cafes.
+This map “Neighborhoods in Rotterdam & Krimpenerwaard (2024) is based on their proximity to facilities to buy alcohol, such as cafes, nightclubs, coffee shops and other party centers. It uses the first new variable we created: Distance_cafes.
 
--   The Red (Cafes closer than 1 km) parts show us the part where the neighbourhoods have a cafe or similar venue within 1 kilometer.
+-   The Red (Cafes closer than 1 km) parts show us the part where the neighborhoods have a cafe or similar venue within 1 kilometer.
 
--   The blue/teal (Cafes further than 1 km) parts show where the neighbourhoods are that are more than 1 kilometer away from the nearest cafe or similar venue.
+-   The blue/teal (Cafes further than 1 km) parts show where the neighborhoods are that are more than 1 kilometer away from the nearest cafe or similar venue.
 
--   Then we have the grey (NA) parts that have no data available for these neighbourhoods.
+-   Then we have the grey (NA) parts that have no data available for these neighborhoods.
 
 This map helps us to identify areas where people are more likely to have easy access to drinking venues, which could contribute to higher alcohol consumption.
 
