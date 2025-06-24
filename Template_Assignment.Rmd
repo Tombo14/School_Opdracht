@@ -18,7 +18,7 @@ library(readr)
 
 # Excessive alcohol use in The Netherlands
 
-Derek van der Linden (2860655), Tom Haandrikman (2866711), Anouk Knaack (2772444), Sara Hoogenboom (2825231), Levi van der Kolk (...), Isabel Nagel (2812985)
+Derek van der Linden (2860655), Tom Haandrikman (2866711), Anouk Knaack (2772444), Sara Hoogenboom (2825231), Levi van der Kolk (2857053), Isabel Nagel (2812985)
 
 CPR02 - Chantal Schouwenaar,
 
